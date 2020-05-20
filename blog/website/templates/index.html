@@ -1,20 +1,10 @@
-<h1>Blog</h1>
+{% extends "base.html" %}
 
-{{ name }}
-<ul>
-{% for item in lista_tecnologias %}
-    
-    {% if item == 'Django' %}
-        <li><b>{{ item }}</b></li>    
-    {% else %}
-        <li>{{ item }}</li>
-    {% endif %}
-
-{% endfor %}
-</ul>
+{% block content %}
+    <h2>Home</h2>
 
     {% for post in posts %}
-        <h2>{{post.title}}</h2>
-        <h3>{{post.sub_title}}</h3>
-        <p>{{post.content}}</p>
+        {{ post.title }}
     {% endfor %}
+
+{% endblock %}
